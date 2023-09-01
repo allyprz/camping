@@ -1,0 +1,327 @@
+/*Importar el archivo vars para usarlo*/
+@import url('./vars.css');
+
+html{
+    font-size: 16px;
+}
+
+body{
+    background: var(--clr-main-bg);
+    display: grid; /* Ubica los elementos según el diseño (alineación)*/
+    font-family: var(--ff-secondary);
+    margin: 0;
+    padding: 0;
+}
+
+.hero-container{
+    background: url(../imgs/header-camping.webp);
+    background-position: center;
+    background-size: cover;
+    border-bottom-left-radius: 6rem;
+    border-bottom-right-radius: 6rem;
+    color: var(--clr-white);
+    height: min(45rem, 50rem, 55rem); /*Se definen rangos: "muévete entre tales valores y establece el tamaño que mejor se ajuste tomando en cuenta los parámetros"*/
+    text-align: center;
+    width: 100%;
+}
+
+.top-nav{
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    margin-left: 10rem;
+    margin-bottom: 8rem;
+}
+
+.nav-list{
+    align-items: center;
+    display: flex;
+    gap: 1rem; /*Separar los elementos de la lista, la propiedad se llama así por el display flex*/
+    padding: 0; 
+    list-style-type: none;
+    margin-left: 2rem;
+}
+
+.nav-list-link{
+    color: var(--clr-white);/*Reescribir el color de los enlaces*/
+    font-size: var(--fs-md);
+    text-decoration: none; /*Quitar el subrayado*/
+}
+
+.hero-title{
+    font-family: var(--ff-main);
+    font-size: clamp(var(--fs-lg), 4rem, var(--fs-xl)); /*Le establecemos rango: pequeño que se necesita, lo más óptimo y lo más grande que se necesita*/
+}
+
+.hero-text{
+    font-size: var(--fs-md);
+    width: clamp(30ch, 50%, 55ch); /*Ch significa caráceres*/
+    margin: 0 auto 2rem;/*0 arriba, auto a los lados y 2 rem abajo*/
+}
+
+.cta-container{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.btn{
+    align-items: center;
+    background: var(--clr-main);
+    border-radius: 1.5rem;
+    display: flex;
+    padding: .5rem 2rem;
+    text-decoration: none;
+}
+
+.activities-container{
+    display: grid;
+    width: 80vw; /*vw: unidad relacionada con el tamaño del ancho de la pantalla (valores 1-100), le estamos diciendo que cubra el 80%*/
+    margin: 2rem auto; /*Separamos nuestro contenedor del heater, el auto es para que se centre*/
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /*repeat: haz un auto-fit (que todos los elementos encajen, si se pasan van abajo) y le damos ancho mínimo (200px) y máximo (1 fraction). Le estamos diciendo: todos los elementos los voy a poner como columnas, repítemelos para que encajen perfectamente y toma en cuenta los rangos que te di, si encajan todos que ocupen una fracción del espacio, pero si es muy pequeño redúcelo hasta 200px*/
+    gap: 1.5rem; /*Separar los elementos*/
+}
+
+.activity{
+    display: grid;
+    background: var(--clr-white);
+    border-radius: 2rem;
+    text-align: center;
+    padding: 2rem 1rem; /*Tiene más espacio hacia arriba que hacia los lados*/
+}
+
+.activity-icon{
+    margin: auto;
+}
+
+.activity-title{
+    margin: 1rem 0 0;
+    font-size: var(--fs-md);
+    font-family: var(--ff-main);
+}
+
+.activity-text{
+    font-size: var(--fs-nm);
+}
+
+.destinations-container{
+    text-align: center;
+}
+
+.destinations-title{
+    font-family: var(--ff-main);
+    font-size: clamp(var(--fs-md), 1.875rem, var(--fs-lg));
+    margin: 1rem auto; /*1 rem arriba y abajo, centrado a los lados*/
+    width: 17ch;
+}
+
+.activity-thumb{
+    display: flex;
+    position: relative;
+    padding: 0 1 rem; /*Dejamos un espacio solo en los lados*/
+}
+
+.activity-image{
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.like-btn{
+    position: absolute;
+    background: var(--clr-white);
+    border-radius: .5rem;
+    border: none;
+    top: 1rem;
+    right: 2rem;
+}
+
+.view-all-btn{
+    background: var(--clr-main-bg);
+    color: var(--clr-main);
+    margin-top: 1rem;
+    border: .1rem solid var(--clr-main);
+}
+
+.activity-price{
+    left: 50%;
+    transform: translate(-50%, 0); /*Vamos a la mitad del elemento y lo colocamos a la mitad de esta medida, es decir, al medio*/
+    display: block;
+    position: absolute;
+    background: var(--clr-white);
+    color: var(--clr-main);
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: .5rem 2rem;
+    bottom: 0; /*Lo envía al fondo*/
+}
+
+.read-btn{
+    display: block;
+    width: 50%;
+    margin: auto;
+    background: var(--clr-gray);
+    color: var(--clr-gray-text); /*Color texto*/
+    text-decoration: none; /*Sin enlace*/
+    padding: 1rem 1.5rem; 
+}
+
+.margin-none{
+    margin: 0;
+}
+
+.suscribe{
+    border-radius: 2rem;
+    /*padding: 2rem 6rem;*/
+    /*box-sizing: border-box;*/
+    background-color: var(--clr-inner-bg);
+}
+
+.subscribe-content{
+    width: 90%;
+    /*margin: auto;*/
+}
+
+.in-touch{
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin-left: 3rem;
+}
+
+.suscribe-title{
+    font-size: clamp(2rem, 2.25rem, var(--fs-lg));
+    width: min(80%, 90%, 100%);
+}
+
+.sucribe-image{
+    display: block;
+    margin: auto;
+    width: 70%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.suscribe-form{
+    align-items: center;
+    background-color: var(--clr-white);
+    border-radius: 1rem;
+    display: flex;
+    gap: .5rem;
+    padding: 1rem;
+}
+
+.email{
+    border: none; /*Le quitamos el borde al input text*/
+    padding: .5rem;
+    width: 100%;
+}
+
+.email:focus{
+    outline: none;
+    box-shadow: 0 0 0 .1rem var(--clr-main); 
+    transition: box-shadow .3s;
+}
+
+.submit{
+    background: url(../imgs/icons/send.svg) var(--clr-main);
+    border: none;
+    background-repeat: no-repeat;
+    border-radius: .75rem;
+    background-position: center;
+    padding: .75rem 1.25rem;
+    cursor: pointer; /*Cuando pasemos el cursos por encima el cursor será una manita*/
+}
+
+.footer-container{
+    background-color: var(--clr-inner-bg);
+    border-top-left-radius: 6rem;
+    border-top-right-radius: 6rem;
+    display: grid;
+    margin: 2rem 0 0;
+    width: 100%;
+}
+
+.footer-content{
+    display: grid;
+    width: 80vw; /*vw: unidad relacionada con el tamaño del ancho de la pantalla (valores 1-100), le estamos diciendo que cubra el 80%*/
+    margin: 2rem auto; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+}
+
+.footer-links{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    gap: 1rem; 
+}
+
+.nav-link-footer{
+    font-size: var(--fs-md);
+    text-decoration: none; 
+}
+
+.nav-bottom-list{
+    padding: 0;
+    list-style-type: none;
+}
+
+.nav-bottom-link{
+    color: var(--clr-black);
+    font-size: var(--fs-md);
+    text-decoration: none;
+}
+
+.footer-legal{
+    text-align: center;
+    font-size: var(--fs-md);
+}
+
+.download-app{
+    display: grid;
+    width: 80vw;
+    margin: auto;
+}
+
+.cta-app-container{
+    display: flex;
+    gap: .5rem;
+}
+
+/*Media Queries, se escriben al final y  se aplican (sobreescriben) para dispositivos de pantallas pequeñas*/
+/*Landscape phone - Less than 768px*/
+@media (max-width: 767.98px){
+
+    .top-nav{
+        margin-top: 2rem;
+        margin-left: 2rem;
+    }
+
+    .nav-list{
+        display: none; /*Escondemos la barra de navegación*/
+    }
+
+    /*.hero-title{
+        font-size: var(--fs-lg);
+        padding: 0;
+    }
+
+    .hero-text{
+        padding: 0;
+    }*/
+
+    .in-touch{
+        margin: 0 1rem 2rem;
+        text-align: center;
+        order: 2; /*Ordena los elementos "al revés"*/
+    }
+
+    .suscribe-image{
+        margin-bottom: 0;
+    }
+
+    .suscribe-title{
+        margin: auto;
+    }
+}
